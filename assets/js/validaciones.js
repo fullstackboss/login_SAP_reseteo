@@ -5,19 +5,32 @@ document.querySelector("form").addEventListener("submit", (event) => {
   document.getElementById("msg_reset").classList.remove("d-none");
 
   /*SI EL DNI ESTA REGISTRADO*/
-  if (document.getElementById("input_dni").value == "1234567890") {
+  if (document.getElementById("input_dni").value == "11111111") {
     /*SI EL DNI YA ESTA EN CURSO*/
     document.getElementById("msg_reset").classList.remove("alert-danger");
     document.getElementById("msg_reset").classList.add("alert-info");
+    document.getElementById("ico_aviso").setAttribute("class","bi bi-clock-history h3");
     document.getElementById("mensaje").innerHTML =
-      "Ya tiene una solicitud en curso, debe esperar a que se termine el proceso de atencion";
-  } else {
+      "Usted ya cuenta con una solicitud en proceso, por favor espere a que termine el proceso de atención.";
+  } 
+  else if (document.getElementById("input_dni").value == "22222222") {
+    document.getElementById("msg_reset").classList.remove("alert-info");
+    document.getElementById("msg_reset").classList.remove("alert-danger");
+    document.getElementById("msg_reset").classList.add("alert-success");
+    document.getElementById("ico_aviso").setAttribute("class","bi bi-check2-circle h3");
+    document.getElementById("mensaje").innerHTML =
+      "¡Solicitud exitosa!<br> En un plazo máximo de 48 horas recibirá sus credenciales en su correo USMP.";
+  }
+  else {
     document.getElementById("msg_reset").classList.remove("alert-info");
     document.getElementById("msg_reset").classList.add("alert-danger");
+    document.getElementById("ico_aviso").setAttribute("class","bi bi-info-circle h3");
     document.getElementById("mensaje").innerHTML =
-      "Sus datos no estan registrados en el sistema, comuniquese con el administrador del sistema al correo soporte@usmp.pe";
+      "Sus datos no se encuentran registrados en el sistema, comuníquese al correo <a class='link_mail' href='mailto:soporte_fcctp@usmp.pe'>soporte_fcctp@usmp.pe</a>";
   }
+  
   /*console.log("enviando")*/
+
 });
 
 let button = document.getElementById("btn_sap");

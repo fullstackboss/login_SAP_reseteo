@@ -34,6 +34,7 @@ body {
 }
 .login-card .card-body {
   padding: 50px 50px 40px 50px;
+  min-height: 620px;
 }
 @media (max-width: 422px) {
   .login-card .card-body {
@@ -164,6 +165,14 @@ body {
   background-color: mistyrose;
   border-radius: 10px;
 }
+.link_mail{
+  color: #bd1714;
+  text-decoration: underline;
+}
+.link_mail:hover{
+  color: #bd1714;
+  
+}
 
 @media (max-width: 767px) {
   .brand-wrapper {
@@ -174,6 +183,10 @@ body {
   }
   .login-card-titulo {
     margin: 6px 0px 20px 0px;
+    font-size: 20px;
+  }
+  .login-card .card-body {
+    height: auto;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
